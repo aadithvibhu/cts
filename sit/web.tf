@@ -1,5 +1,5 @@
 resource "aws_instance" "ec2_devops" {
-  count                   = 2
+  count                   = 1
   ami                     = "${lookup(var.AMIS, var.AWS_REGION)}"
   instance_type           = "t2.micro"
   iam_instance_profile    = "ec2admin"

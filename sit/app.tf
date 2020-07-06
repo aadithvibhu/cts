@@ -1,6 +1,6 @@
 moudle "webserver" {
   source = "../modules/aws-ec2"
-  count                   = 2
+  count                   = 1
   instance_type           = "t2.micro"
   key_name                = "${aws_key_pair.kp_devops.key_name}"
   monitoring              = true
