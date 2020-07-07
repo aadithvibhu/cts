@@ -1,4 +1,3 @@
-
 data "aws_vpc" "vpc_devops" {
   filter {
     name   = "isDefault"
