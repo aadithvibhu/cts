@@ -19,10 +19,6 @@ variable "default_route" {
 }
 
 
-variable "ami_devops" {
-	default = "ami-0615132a0f36d24f4"
-}
-
 variable "region" {
        default =  "ap-southeast-1"
 }
