@@ -19,9 +19,9 @@ export PATH=${TF_HOME}:$PATH
 # Move to project terraform config directory
 ##################################################################
 
-echo ${WORKSPACE}/${ENVNAME}/
-cd ${WORKSPACE}/${ENVNAME}/
-terraform import aws_key_pair.${APPNAME} ${APPNAME}key
+echo ${WORKSPACE}/${PROJECT}/${ENVNAME}
+cd ${WORKSPACE}/${PROJECT}/${ENVNAME}
+terraform import aws_key_pair.${KEYNAME} ${KEYNAME}
 ##################################################################
 # Delete local terraform config and pull from s3 config
 ##################################################################

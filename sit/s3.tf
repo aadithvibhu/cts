@@ -1,4 +1,4 @@
-s3ctsresource "aws_s3_bucket" "s3cts" {
+resource "aws_s3_bucket" "s3cts" {
   bucket = "s3cts"
   acl    = "private"
 

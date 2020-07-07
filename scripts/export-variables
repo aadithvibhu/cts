@@ -7,3 +7,4 @@ export PATH=/apps:$PATH
 export WORKSPACE=/apps
 export APPNAME="supermarket"
 export S3_BUCKET="s3cts"
+export KEYNAME="kp_devops"

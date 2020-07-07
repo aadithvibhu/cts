@@ -1,4 +1,4 @@
-moudle "webserver" {
+module "appserver" {
   source = "../modules/aws-ec2"
   count                   = 1
   instance_type           = "t2.micro"
@@ -8,7 +8,7 @@ moudle "webserver" {
   user_data               = file("../scripts/bootstrap.sh")
   disable_api_termination = false
   vpc_security_group_ids  = [
-    "${aws_security_group.linux_instance_security_group.id}"
+    "${aws_security_group.sg_devops.id}"
   ]
 
   root_block_device {

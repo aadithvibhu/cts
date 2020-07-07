@@ -1,15 +1,14 @@
-resource "aws_instance" "ec2_devops" {
+module "webserver" {
+  source = "../modules/aws-ec2"
   count                   = 1
-  ami                     = "${lookup(var.AMIS, var.AWS_REGION)}"
   instance_type           = "t2.micro"
-  iam_instance_profile    = "ec2admin"
-  key_name                = "${aws_key_pair.income.key_name}"
+  key_name                = "${aws_key_pair.kp_devops.key_name}"
   monitoring              = true
-  subnet_id               = "${aws_subnet.wp-subnet-private-1.id}"
+  subnet_id               = "${element(random_shuffle.random_linux_host.result,0)}"
   user_data               = file("../scripts/bootstrap.sh")
   disable_api_termination = false
   vpc_security_group_ids  = [
-    "${aws_security_group.wp-sg.id}"
+    "${aws_security_group.sg_devops.id}"
   ]
 
   root_block_device {
@@ -19,7 +18,7 @@ resource "aws_instance" "ec2_devops" {
   }
 
   tags = {
-    Name                     = format("ec2_devops-%02d", count.index + 1)
+    Name                     = format("webserver-%02d", count.index + 1)
     Type                     = "EC2 Instance"
     Monitoring               = "true"
  }

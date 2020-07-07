@@ -19,8 +19,8 @@ export PATH=${TF_HOME}:$PATH
 # Move to project terraform config directory
 ##################################################################
 
-cd ${WORKSPACE}/${ENVNAME}/
-echo ${WORKSPACE}/${ENVNAME}/
+cd ${WORKSPACE}/${PROJECT}/${ENVNAME}
+echo ${WORKSPACE}/${PROJECT}/${ENVNAME}
 ##################################################################
 # Delete local terraform config and pull from s3 config
 ##################################################################

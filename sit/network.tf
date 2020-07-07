@@ -40,7 +40,7 @@ resource "aws_internet_gateway" "igw_devops" {
 # NAT Gateway
 #**************
 
-resource "aws_eip" "eip_devops{
+resource "aws_eip" "eip_devops"{
   vpc      = true
 }
 
